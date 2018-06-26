@@ -1,5 +1,7 @@
 package org.spring.springboot.controller;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.spring.springboot.domain.City;
 import org.spring.springboot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class CityRestController {
+	
+	private Log log = LogFactory.getLog(CityRestController.class);
 
     @Autowired
     private CityService cityService;
 
     @RequestMapping(value = "/api/city", method = RequestMethod.GET)
     public City findOneCity(@RequestParam(value = "cityName", required = true) String cityName) {
+    	log.info("通过城市名查询");
         return cityService.findCityByName(cityName);
     }
 
