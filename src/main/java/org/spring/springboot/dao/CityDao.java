@@ -1,5 +1,7 @@
 package org.spring.springboot.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.spring.springboot.domain.City;
 
@@ -16,4 +18,15 @@ public interface CityDao {
      * @param cityName 城市名
      */
     City findByName(@Param("cityName") String cityName);
+
+	/**
+	 * 查找所有
+	 * @return
+	 */
+	List<City> findAll();
+
+	/**保存
+	 * @param city
+	 */
+	void save(City city);
 }

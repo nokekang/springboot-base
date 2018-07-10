@@ -20,5 +20,23 @@
 		from city
 		where city_name = #{cityName}
 	</select>
+	
+	<select id="findAll" resultMap="BaseResultMap" >
+		select
+		<include refid="Base_Column_List" />
+		from city
+	</select>
+	
+	<select id="save"  >
+		insert into city (
+		<include refid="Base_Column_List" />
+		)
+		values (
+			#{id},
+			#{provinceId},
+			#{cityName},
+			#{description}
+		);
+	</select>
 
 </mapper>
