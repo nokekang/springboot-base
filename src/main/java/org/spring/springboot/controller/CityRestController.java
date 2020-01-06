@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by bysocket on 07/02/2017.
  */
 @RestController
+@RequestMapping("/city")
 public class CityRestController {
 	
 	private Log log = LogFactory.getLog(CityRestController.class);
@@ -25,7 +26,9 @@ public class CityRestController {
     @RequestMapping(value = "/api/city", method = RequestMethod.GET)
     public City findOneCity(@RequestParam(value = "cityName", required = true) String cityName) {
     	log.info("通过城市名查询");
-        return cityService.findCityByName(cityName);
+        City cityByName = cityService.findCityByName(cityName);
+        log.info(cityByName);
+        return cityByName;
     }
 
 }
