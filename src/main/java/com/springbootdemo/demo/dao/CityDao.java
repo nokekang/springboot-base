@@ -1,16 +1,18 @@
-package org.spring.springboot.dao;
+package com.springbootdemo.demo.dao;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.spring.springboot.domain.City;
+import com.springbootdemo.demo.domain.City;
+import org.springframework.stereotype.Repository;
 
 /**
  * 城市 DAO 接口类
  *
  * Created by bysocket on 07/02/2017.
  */
+ // 可以不写，但是不写idea编译报错
 public interface CityDao {
 
     /**

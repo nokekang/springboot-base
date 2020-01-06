@@ -1,10 +1,10 @@
-package org.spring.springboot.service.impl;
+package com.springbootdemo.demo.service.impl;
 
 import java.util.List;
 
-import org.spring.springboot.dao.CityDao;
-import org.spring.springboot.domain.City;
-import org.spring.springboot.service.CityService;
+import com.springbootdemo.demo.dao.CityDao;
+import com.springbootdemo.demo.service.CityService;
+import com.springbootdemo.demo.domain.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

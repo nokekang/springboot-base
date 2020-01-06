@@ -1,8 +1,8 @@
-package org.spring.springboot.service;
+package com.springbootdemo.demo.service;
 
 import java.util.List;
 
-import org.spring.springboot.domain.City;
+import com.springbootdemo.demo.domain.City;
 
 /**
  * 城市业务逻辑接口类
