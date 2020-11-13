@@ -21,7 +21,31 @@ public class CityServiceImpl implements CityService {
     private CityDao cityDao;
 
     public City findCityByName(String cityName) {
-        return cityDao.findByName(cityName);
+
+		Thread daemonThread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				while (true) {
+					try {
+						Thread.sleep(1000);
+						System.out.println("守护线程心跳。。。");
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		daemonThread.setDaemon(true);
+		daemonThread.start();
+
+		try {
+			Thread.sleep(1000*10);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("主线程结束");
+//		City byName = cityDao.findByName(cityName);
+        return new City();
     }
 
 	@Override

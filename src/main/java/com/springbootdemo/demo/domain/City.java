@@ -1,6 +1,7 @@
 package com.springbootdemo.demo.domain;
 
 import lombok.Data;
+import lombok.ToString;
 
 /**
  * 城市实体类
@@ -8,6 +9,7 @@ import lombok.Data;
  * Created by bysocket on 07/02/2017.
  */
 @Data
+@ToString
 public class City{
 
     /**

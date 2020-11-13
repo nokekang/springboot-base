@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
  * Created by bysocket on 07/02/2017.
  */
  // 可以不写，但是不写idea编译报错
+@Repository
 public interface CityDao {
 
     /**
