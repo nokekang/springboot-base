@@ -18,8 +18,8 @@ public class TestJava {
         ArrayList<City> citys = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             City city = new City();
-            city.setId((long)i);
-            city.setId((long)i);
+            city.setId(i);
+            city.setId(i);
             city.setCityName(String.valueOf(i));
             citys.add(city);
         };

@@ -2,6 +2,7 @@ package com.springbootdemo.demo.service.impl;
 
 import java.util.List;
 
+import com.github.pagehelper.PageHelper;
 import com.springbootdemo.demo.dao.CityDao;
 import com.springbootdemo.demo.service.CityService;
 import com.springbootdemo.demo.domain.City;
@@ -25,14 +26,14 @@ public class CityServiceImpl implements CityService {
 		Thread daemonThread = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				while (true) {
+//				while (true) {
 					try {
 						Thread.sleep(1000);
 						System.out.println("守护线程心跳。。。");
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-				}
+//				}
 			}
 		});
 		daemonThread.setDaemon(true);
@@ -50,6 +51,7 @@ public class CityServiceImpl implements CityService {
 
 	@Override
 	public List<City> findAll() {
+		PageHelper.startPage(2,5);
 		return cityDao.findAll();
 	}
 

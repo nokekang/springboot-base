@@ -18,15 +18,14 @@
 	<select id="findAll" resultType="City" >
 		select
 		<include refid="Base_Column_List" />
-		from city
+		from city limit 10
 	</select>
 	
 	<select id="save"  >
 		insert into city (
-		<include refid="Base_Column_List" />
+		 province_id, city_name, description
 		)
 		values (
-			#{id},
 			#{provinceId},
 			#{cityName},
 			#{description}

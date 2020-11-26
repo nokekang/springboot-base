@@ -15,12 +15,12 @@ public class City{
     /**
      * 城市编号
      */
-    private Long id;
+    private Integer id;
 
     /**
      * 省份编号
      */
-    private Long provinceId;
+    private String provinceId;
 
     /**
      * 城市名称

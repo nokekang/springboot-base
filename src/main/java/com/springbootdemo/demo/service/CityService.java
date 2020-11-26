@@ -27,4 +27,5 @@ public interface CityService {
 	 * @param city
 	 */
 	void save(City city);
+
 }
