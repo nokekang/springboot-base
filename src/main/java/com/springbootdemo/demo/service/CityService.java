@@ -28,4 +28,5 @@ public interface CityService {
 	 */
 	void save(City city);
 
+	void exceptionSave(City city);
 }

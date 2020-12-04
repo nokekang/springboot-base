@@ -8,7 +8,10 @@ import com.springbootdemo.demo.service.CityService;
 import com.springbootdemo.demo.domain.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.management.relation.RoleUnresolved;
 
 /**
  * 城市业务逻辑实现类
@@ -56,9 +59,18 @@ public class CityServiceImpl implements CityService {
 	}
 
 	@Override
-	@Transactional
+//	@Transactional(propagation = Propagation.REQUIRED)
+	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	public void save(City city) {
 		cityDao.save(city);
 	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED)
+//	@Transactional(propagation = Propagation.REQUIRES_NEW)
+	public void exceptionSave(City city) {
+		cityDao.save(city);
+	}
+
 
 }

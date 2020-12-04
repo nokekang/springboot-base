@@ -1,6 +1,7 @@
 package com.springbootdemo.demo.controller;
 
 import com.springbootdemo.demo.service.CityService;
+import com.springbootdemo.demo.service.TransactionTestService;
 import lombok.extern.slf4j.Slf4j;
 import com.springbootdemo.demo.domain.City;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,4 +71,18 @@ public class CityRestController {
         return "ok";
     }
 
+    @RequestMapping(value = "/save1", method = RequestMethod.POST)
+    public String save(@RequestBody Object object) {
+        System.out.println(object);
+        return "ok";
+    }
+
+    @Autowired
+    private TransactionTestService transactionTestService;
+
+    @RequestMapping(value = "/testTra", method = RequestMethod.POST)
+    public String testTra(@RequestBody Object object) {
+        transactionTestService.testTransaction();
+        return "ok";
+    }
 }
